@@ -16,29 +16,29 @@ _INPUT = """\
 sys.stdin = io.StringIO(_INPUT)
 
 H, W = map(int, input().split())
-X = [ None ] * H
+X = [None] * H
 for h in range(H):
-  X[h] = list(map(int,input().split()))
+    X[h] = list(map(int, input().split()))
 
 Q = int(input())
-ABCD = [ None ] * Q
+ABCD = [None] * Q
 for q in range(Q):
-  ABCD[q] = list(map(int,input().split()))
+    ABCD[q] = list(map(int, input().split()))
 
-#print(X)
-#print(ABCD)
+# print(X)
+# print(ABCD)
 
 # 出題数分ループ
 for q in range(Q):
-  a = ABCD[q][0] - 1
-  b = ABCD[q][1] - 1
-  c = ABCD[q][2]
-  d = ABCD[q][3]  
+    a = ABCD[q][0] - 1
+    b = ABCD[q][1] - 1
+    c = ABCD[q][2]
+    d = ABCD[q][3]
 
-  ans = 0
-  for i in range(a, c):
-    for j in range (b , d):
-      #print(str(i) + ',' + str(j) + ':' + str(X[i][j]))
-      ans = ans + X[i][j]
-  
-  print(ans)
+    ans = 0
+    for i in range(a, c):
+        for j in range(b, d):
+            # print(str(i) + ',' + str(j) + ':' + str(X[i][j]))
+            ans = ans + X[i][j]
+
+    print(ans)

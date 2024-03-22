@@ -8,19 +8,16 @@ _INPUT = """\
 """
 sys.stdin = io.StringIO(_INPUT)
 
-nk = list(map(int,input().split()))
+nk = list(map(int, input().split()))
 n = nk[0]
 k = nk[1]
-ps = list(map(int,input().split()))
-qs = set(list(map(int,input().split())))
+ps = list(map(int, input().split()))
+qs = set(list(map(int, input().split())))
 
 result = 'No'
 for p in ps:
-  if (k - int(p)) in qs:
-    result = 'Yes'
-    break
+    if (k - int(p)) in qs:
+        result = 'Yes'
+        break
 
 print(result)
-
-
-

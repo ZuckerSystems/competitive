@@ -7,10 +7,10 @@ _INPUT = """\
 """
 sys.stdin = io.StringIO(_INPUT)
 
-n = list(map(int,input().split()))[1]
-xs = set(list(map(int,input().split())))
+n = list(map(int, input().split()))[1]
+xs = set(list(map(int, input().split())))
 
 if n in xs:
-  print('Yes')
+    print('Yes')
 else:
-  print('No')
+    print('No')
