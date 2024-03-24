@@ -16,6 +16,11 @@ def factorial_recursive(n: int) -> int:
 # 素数の積の減算後に掛け算する
 
 # step1 素数リスト作成
+# step2 素数毎の乗算数を算出
+# step3 素数のみの乗算-乗算で割り算を実現
+# step4 素数で割った値を算出
+# 結果はTLE
+
 # 素数リストの算出
 # 素数列挙は数学の永遠のテーマのため高速算出アルゴリズムはライブラリを使うのがよい。
 # これは貼り付け（https://ebisuke33.hatenablog.com/entry/eratosthenes）
@@ -88,7 +93,7 @@ for dictKey in rDict:
             nDict[dictKey] = nDict[dictKey] - rDict[dictKey]
             rDict[dictKey] = 0
         else:
-            # 分母側が残る場合
+            # 分母側が残る場合 論理的にここは通らない
             print('分母あり')
             nDict[dictKey] = 0
             rDict[dictKey] = rDict[dictKey] - nDict[dictKey]
