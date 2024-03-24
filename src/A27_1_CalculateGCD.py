@@ -2,7 +2,7 @@ import io
 import sys
 
 _INPUT = """\
-1651 4381
+123 777
 """
 sys.stdin = io.StringIO(_INPUT)
 
@@ -22,21 +22,23 @@ else:
     small = A
 
 i = int(small / 2) + 1
-print(i)
+# print(i)
 while i > 1:
-  print(i)
-  # if i == 1: break
-  if small % i == 0:
-     modmin = i / small #割り切れる
-     if big % i == 0:
-         answer = i
-         break
-     else:
-        modmin = i / small #割り切れる
-        i = int(i / modmin) + 1
-  else:
-     print('-')
-     i -= 1
-print(answer)
+    # print(i)
+    # if i == 1: break
+    if small % i == 0:
+        modmin = i / small  # 割り切れる
+        if big % i == 0:
+            answer = i
+            break
+        else:
+            if i == 2:
+                break
+            # 1260 の場合、630で割れる。
+            # 次に探索するのは (1260/3)+1からでよい。3は2+1
+            i = int(i / (modmin + 1)) + 1
+    else:
+        # print(i)
+        i -= 1
 
-# 36 1 18 2 12 3 6
+print(answer)
