@@ -6,8 +6,10 @@
   ],
   "settings": {
     "[python]": {
-      "editor.defaultFormatter": "ms-python.autopep8",
-      "editor.formatOnSave": false
+      "editor.formatOnSaveMode": "file",
+      "editor.formatOnSave": true,
+      "editor.defaultFormatter": "eeyore.yapf",
+      "editor.formatOnType": false
     }
   }
 }

@@ -1,4 +1,3 @@
-
 import bisect
 import io
 import sys
@@ -46,10 +45,10 @@ class WorkPlan:
             for i in self.endDayDict[endDay]:
                 self.workingTimeStack.remove(i)
         # print('endDayRemove end', self.workingTimeStack)
-        self.todayhour = min(self.workingTimeStack+[24])
+        self.todayhour = min(self.workingTimeStack + [24])
 
 
-# 開始日が来たものをスタックに移動する
+# 開始日が来たものを労働時間算出クラスに移動する
 D, N = map(int, input().split())
 LRH = [[0, 0, 0] for i in range(N)]
 for i in range(N):
@@ -63,7 +62,7 @@ LRH.sort(key=lambda x: x[0])
 workPlan = WorkPlan()
 step = 0
 ans = 0
-for day in range(1, D+1):
+for day in range(1, D + 1):
     # print('a')
     while step < N:
         # print('b', LRH[step][0], day)
@@ -83,6 +82,5 @@ for day in range(1, D+1):
     # print('ans', ans)
     # 算出が終わったら今日終了分を消す
     workPlan.endDayRemove(day)
-
 
 print(ans)
