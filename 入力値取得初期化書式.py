@@ -27,3 +27,18 @@ for i in range(1, N + 1):
 LRH = [[0, 0, 0] for i in range(N)]
 for i in range(N):
     LRH[i] = list(map(int, input().split()))
+"""
+s1 t1 u1
+s2 t2 u2
+s3 t3 u3
+...
+sn tn un
+"""
+a = [list(map(int, input().split(" "))) for i in range(N)]
+
+N, L = map(int, input().split())
+A = [None] * N
+B = [None] * N
+for i in range(N):
+    A[i], B[i] = input().split()
+    A[i] = int(A[i])

@@ -7,6 +7,8 @@ _INPUT = """\
 4 W
 """
 sys.stdin = io.StringIO(_INPUT)
+## ここから提出
+N, L = map(int, input().split())
 """
 全長 L メートルの ALGO トンネルには、現在 N 人がいます。人 i は西端から Aiメートルの位置におり、方向Biへ歩いています（E のとき東、W のとき西）。
 トンネルの幅は狭いため、2 人が同じ位置に来たら移動方向を変えます。全員が秒速 1 メートルで歩くとき、最後の人がトンネルの外に出るのは何秒後ですか。
@@ -18,7 +20,6 @@ sys.stdin = io.StringIO(_INPUT)
 # G                 WE                        G
 # GW                                      E   G
 # Eの人がゴールするのは初期のEの人のGまでの時間
-N, L = map(int, input().split())
 EAST = [L]
 WEST = [0]
 for i in range(N):
