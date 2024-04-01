@@ -14,4 +14,10 @@ python 学習のために競技プログラミングで基本文法を学習し�
 - List 累積和
 - List 横縦累積和
 
-- スタックを実現するクラス
+- スタックを実現するクラス  
+  list で十分
+
+- にぶたん  
+  import bisect
+  idx = bisect.bisect_left(Asort, a)
+  idx の位置を調べる
