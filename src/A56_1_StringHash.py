@@ -18,8 +18,8 @@ substringした結果が同じかの判定問題
 
 N, Q = map(int, input().split())
 S = input()
-Query = [None] * Q
-SLIST = S.split()
+Query = []
+
 #f = open('A56-debug.txt', 'w', encoding='utf-8', newline='\n')
 for i in range(Q):
     Query = list(map(int, input().split()))
