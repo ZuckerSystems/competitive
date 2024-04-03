@@ -21,3 +21,7 @@ python 学習のために競技プログラミングで基本文法を学習し�
   import bisect
   idx = bisect.bisect_left(Asort, a)
   idx の位置を調べる
+
+## Python 学習メモ
+
+1. 変数スコープ
