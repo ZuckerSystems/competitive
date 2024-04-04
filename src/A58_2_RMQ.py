@@ -3,16 +3,11 @@ import sys
 
 # print(sys.getrecursionlimit())
 _INPUT = """\
-8 9
+8 4
 1 3 16
 2 4 7
 1 5 13
 2 4 7
-1 8 29
-2 1 8
-2 1 1
-2 3 3
-2 3 4
 """
 sys.stdin = io.StringIO(_INPUT)
 """
@@ -61,7 +56,7 @@ class RMQSegmentTree:
                                     self.tree[2 * tmpidx + 2])
 
         #print(self.tree)
-        # for i in range(len(self.tree)):
+        #for i in range(len(self.tree)):
         #    print(i, self.tree[i])
         #return
 
@@ -73,24 +68,28 @@ class RMQSegmentTree:
         # 最上段の範囲 [7-14→0-7に変換して比較している]
         # 全範囲カバーするように２分割再帰しながら下段に降りていく
         # 初回呼び出し時のrは最下段配列数
-        print(a, b, k, l, r)
+        # print(a, b, k, l, r)
+        #print(k)
         if r < 0:
-
-            r = self.n
-            #print('r', r)
+            r = self.n - 1
+            # print('初回', a, b, k, l, r)
         # 対象範囲外
         if r <= a or b <= l:
-            #print('対象範囲外', a, b, l, r)
+            # print('対象範囲外', a, b, k, l, r)
             return -10000
         # 要求区間をすべてカバーしている
-        if a <= l and r <= b:
+        if l >= a and b >= r:
+            # print(self.tree[k])
             return self.tree[k]
-        print('next', l, (l + r) // 2, r)
-        # 子のカバー範囲を与えて再帰
-        lMax = self.getMAX(a, b, 2 * k + 1, l, (l + r) // 2 - 1)
-        rMax = self.getMAX(a, b, 2 * k + 2, (l + r) // 2, r)
 
-        print(a, b, k, 'l', l, 'r', r, lMax, rMax)
+        # 子のカバー範囲を与えて再帰
+        #print('Left:', a, b, 2 * k + 1, l, (l + r) // 2)
+        #print('right:', a, b, 2 * k + 2, (l + r) // 2 + 1, r)
+
+        lMax = self.getMAX(a, b, 2 * k + 1, l, (l + r) // 2)
+        rMax = self.getMAX(a, b, 2 * k + 2, (l + r) // 2 + 1, r)
+
+        #print(a, b, k, 'l', l, 'r', r, lMax, rMax)
         return max(lMax, rMax)
 
 
