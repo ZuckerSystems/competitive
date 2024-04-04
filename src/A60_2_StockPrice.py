@@ -65,6 +65,7 @@ for i in range(N):
         print('j', j, 'A[i]', A[i], '<AValDay[j][0]', AValDay[j][0], 'i', i,
               '>AValDay[j][1]', AValDay[j][1])
         if A[i] < AValDay[j][0] and i > AValDay[j][1]:
+            # この条件ではNGでAValDay[ret]より下の配列の要素2の最大を求めればよいnumpyの仕様を確認中
             noprint = False
             print(AValDay[j][1] + 1)
             break
