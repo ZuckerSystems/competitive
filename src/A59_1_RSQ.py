@@ -3,28 +3,30 @@ import sys
 
 # print(sys.getrecursionlimit())
 _INPUT = """\
-1 5
-2 1 2
-1 1 5
-2 1 2
-1 1 3
-2 1 2
+8 4
+1 3 16
+1 6 24
+2 4 8
+2 1 7
 """
 sys.stdin = io.StringIO(_INPUT)
 """
-長さ N の数列A=(A1 ,A2 ,…,AN) があり、最初はすべての要素が 
-0 になっています。以下の 2 種類のクエリを処理してください。
-クエリ 1：Apos  の値をx に更新する。
-クエリ 2：Al ,Al+1 ,…,Ar−1の最大値を答える。
-セグメント木で解く
+最大値RMQのソースのまま関数定義のみ変更
 クラスを拾ってくる(キータからhttps://qiita.com/takayg1/items/c811bd07c21923d7ec69)
 from atcoder.lazysegtree import LazySegTree というライブラリもある競技プログラミング用ライブラリのため使用はしない
 """
 
 
+#
+#操作	    segfunc	        単位元
+#最小値	    min(x, y)	    float('inf')
+#最大値	    max(x, y)	    -float('inf')
+#区間和	    x + y	        0
+#区間積	    x * y	        1
+#最大公約数	math.gcd(x, y)	0
 #####segfunc#####
 def segfunc(x, y):
-    return max(x, y)
+    return x + y
 
 
 ################
