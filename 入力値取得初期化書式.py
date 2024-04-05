@@ -17,7 +17,8 @@ len_s = len(S)
 len_t = len(T)
 # DPの初期化包括表記
 dp = [[0 for j in range(len_t + 1)] for i in range(len_s + 1)]
-
+# リストの包括表記
+route = [list() for j in range(N + 1)]
 P = [None] * (N + 1)
 A = [None] * (N + 1)
 for i in range(1, N + 1):
