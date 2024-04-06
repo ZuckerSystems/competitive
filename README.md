@@ -15,13 +15,38 @@ python 学習のために競技プログラミングで基本文法を学習し�
 - List 横縦累積和
 
 - スタックを実現するクラス  
-  list で十分
-
+  list で十分。
+  速度的に厳しい場合は deque ライブラリを使う。
+  ```
+  from collections import deque
+  ```
+- キューを実現するクラス  
+  list で十分。  
+  速度的に厳しい場合は deque ライブラリを使う。
+  ```
+  from collections import deque
+  ```
 - にぶたん  
   import bisect
   idx = bisect.bisect_left(Asort, a)
   idx の位置を調べる
 
+- セグメント木  
+  一から実装するとインデックス地獄になるのでクラス化されているものを利用(A58-3 参照)
+
+- 再帰上限  
+  上げられます。上げないと無理な事も多い
+  ```
+  import sys
+  sys.setrecursionlimit(100000)  #再帰上限を上げる必要あり
+  ```
+
 ## Python 学習メモ
 
 1. 変数スコープ
+
+2. アルゴリズム一覧
+
+-
+
+3. ライブラリ一覧
