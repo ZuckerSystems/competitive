@@ -9,7 +9,7 @@ sys.stdin = io.StringIO(_INPUT)
 """
 もしグラフ全体が連結であれば、 The graph is connected. と出力する
 そうでなければ、 The graph is not connected. と出力する
-グラフが与えられているのDFSで実装する
+グラフが与えられているの 深さ優先探索DFSで実装する
 再帰上限を上げられる事を知らずにfor分で実現しようとしたが、再帰上限上げるのみでOKでした
 """
 import sys
