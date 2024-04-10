@@ -110,3 +110,14 @@ python 学習のために競技プログラミングで基本文法を学習し�
   heapq.heappop(ls) #デキュー
   heapq.heappush(ls,(100 ,50)) #エンキュー
   ```
+
+5. 命名規約・実装規約  
+   google のサンプルを参考に
+   [google python 規約](https://google.github.io/styleguide/pyguide.html)
+
+- class:アッパーキャメルケース  
+  ServiceAccountCredentials
+- 変数:ローワーキャメルケース  
+  dateRangeValues
+- 関数:スネークケース  
+  initialize_analyticsreporting
