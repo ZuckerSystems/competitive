@@ -409,12 +409,12 @@ sys.stdin = io.StringIO(_INPUT)
 N 個のタンクと M 本のパイプがあります、j 本目のパイプはタンク A j​  からタンク B j​  の方向に毎秒 C j​  リットルまで水を流すことができます。
 タンク 1 からタンク N まで毎秒最大何リットルの水を流すことができますか。ただし、タンクに水を貯めることはできないと考えてかまいません。
 
-#全探索で実現してみる。
 #この問題用のライブラリがあるのでそれを利用。
 #graph構築でmaxFlowが算出できる
 """
 from atcoder.maxflow import MFGraph
 
+# 0-indexで使用する必要がありそう
 n, m = map(int, input().split())
 graph = MFGraph(n)
 for i in range(m):
