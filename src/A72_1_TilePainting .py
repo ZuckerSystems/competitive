@@ -25,7 +25,7 @@ for i in range(h):
     str = str.replace('.', '0')
 
     #print(str)
-    tmp[i] = list(map(int, list(str)))
+    tmp[i] = list(map(int, list(str)))  #str.split()では先頭のゼロが消える
     #print(tmp[i])
 
 board = np.asarray(tmp)

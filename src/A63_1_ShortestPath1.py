@@ -38,7 +38,7 @@ for i in range(M):
 from collections import deque
 
 
-# 深さ優先探索
+# 幅優先探索
 def bfs(graph, start, goal):
     visited = set()
     queue = deque([(start, [start])])

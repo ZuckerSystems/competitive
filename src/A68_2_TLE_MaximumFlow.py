@@ -423,7 +423,7 @@ flows = dict()  # 1-2へ50の場合 {1*1000 + 2 : 50}= {1002:50}と記録
 from collections import deque
 
 
-# 深さ優先探索をフルサーチに改造
+# 幅優先探索をフルサーチに改造
 def full_search(graph, start, goal, routes=None):
     #print(start, goal)
     if routes is None:
