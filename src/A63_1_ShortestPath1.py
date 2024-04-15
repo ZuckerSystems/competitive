@@ -42,9 +42,10 @@ from collections import deque
 def bfs(graph, start, goal):
     visited = set()
     queue = deque([(start, [start])])
-    # print(queue)
+    print(queue)
     while queue:
         (node, path) = queue.popleft()
+        print(node, path)
         if node not in visited:
             if node == goal:
                 return path
