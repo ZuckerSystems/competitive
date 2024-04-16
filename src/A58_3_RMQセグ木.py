@@ -18,7 +18,7 @@ sys.stdin = io.StringIO(_INPUT)
 クエリ 2：Al ,Al+1 ,…,Ar−1の最大値を答える。
 セグメント木で解く
 クラスを拾ってくる(キータからhttps://qiita.com/takayg1/items/c811bd07c21923d7ec69)
-from atcoder.lazysegtree import LazySegTree というライブラリもある競技プログラミング用ライブラリのため使用はしない
+from atcoder.lazysegtree import LazySegTree というライブラリもある。競技プログラミング用ライブラリのため使用はしない
 """
 
 
