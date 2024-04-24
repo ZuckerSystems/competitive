@@ -43,20 +43,20 @@ dp[0] = [[] for _ in range(N + 1)]
 
 for i in range(1, S + 1):
     for j in range(1, N + 1):
-        print(i, j)
+        #print(i, j)
         if i < A[j]:
-            print('i<a')
+            #print('i<a')
             dp[i][j] = dp[i][j - 1]
         else:
-            print(i - A[j], [j - 1], dp[i - A[j]][j - 1])
-
+            #print(i - A[j], [j - 1], dp[i - A[j]][j - 1])
+            # 前の値と合計してi値になるかの判定。最終的にS値になる。
             if dp[i - A[j]][j - 1] == None:
-                print('None')
+                #print('None')
                 dp[i][j] = dp[i][j - 1]
             else:
-                print('i値', i, 'j値', j)
-                print(dp[i - A[j]][j - 1])
-                print([A[j]])
+                #print('i値', i, 'j値', j)
+                #print(dp[i - A[j]][j - 1])
+                #print([A[j]])
 
                 #if int(dp[i - A[j]][j - 1]) + int[A[j]] == i:
                 dp[i][j] = dp[i - A[j]][j - 1] + [j]
