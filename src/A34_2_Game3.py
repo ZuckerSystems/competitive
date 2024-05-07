@@ -1,10 +1,9 @@
-
 import io
 import sys
 
 _INPUT = """\
 2 2 3
-5 8
+1 1 7
 """
 sys.stdin = io.StringIO(_INPUT)
 
@@ -19,16 +18,15 @@ Amax = max(A)
 # 各石の数のgrundyを算出
 grundy = [[None] for j in range(Amax + 1)]
 
-
 grundy[0] = 0
 for i in range(1, Amax + 1):
     Transit = [False, False, False]
     if i >= X:
         # 前がどの0 ,1, 2から来たかで今回のbrundyが決まる
-        Transit[grundy[i-X]] = True
+        Transit[grundy[i - X]] = True
     if i >= Y:
         # Yで上書きしてよい　ここに気付けなかった
-        Transit[grundy[i-Y]] = True
+        Transit[grundy[i - Y]] = True
     if Transit[0] == False:
         grundy[i] = 0
     elif Transit[1] == False:
