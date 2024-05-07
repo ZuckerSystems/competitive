@@ -51,3 +51,5 @@ B = [None] * N
 for i in range(N):
     A[i], B[i] = input().split()
     A[i] = int(A[i])
+# 文字列を分割して受け取る
+ls = [s for s in input()]
