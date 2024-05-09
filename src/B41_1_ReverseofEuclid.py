@@ -20,12 +20,10 @@ sys.stdin = io.StringIO(_INPUT)
 
 # 入力など
 
-X, Y = map(int, input().split())
+x, y = map(int, input().split())
 
 ans = []
 
-x = X
-y = Y
 ans.append((x, y))
 while x > 1 or y > 1:
     if x > y:
