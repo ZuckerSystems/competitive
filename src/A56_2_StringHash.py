@@ -52,6 +52,7 @@ def get(h, l, r):
 setup_pw(N)
 sHash = rolling_hash(S)
 
+print(sHash)
 for i in range(Q):
     query = list(map(int, input().split()))
     # 0index開始なのでQueryの数字-1から取得する必要がある
