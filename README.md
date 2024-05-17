@@ -136,3 +136,8 @@ python 学習のために競技プログラミングで基本文法を学習し�
   dateRangeValues
 - 関数:スネークケース  
   initialize_analyticsreporting
+
+6. 処理高速化
+
+- list に含まれるかの判定  
+  list から set に変換するか最初から set で行う。速度が段違い。
