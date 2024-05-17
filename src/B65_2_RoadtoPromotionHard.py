@@ -32,8 +32,9 @@ i 個目の情報: 社員 Ai と社員 Bi は直属の上司と部下の関係�
 深さ優先探索で最深部を保持する
 """
 sys.stdin = io.StringIO(_INPUT)
-import queue
+import sys
 
+sys.setrecursionlimit(100000)  #再帰上限を上げる
 N, T = map(int, input().split())
 G = [[] for i in range(N + 1)]
 
@@ -41,7 +42,6 @@ G = [[] for i in range(N + 1)]
 for i in range(N - 1):
     A, B = map(int, input().split())
     #全ての経路を格納してgraphを作成する
-    #dprint(A, B)
     G[A].append(B)  # 0-index
     G[B].append(A)
 
@@ -54,7 +54,7 @@ def dfs(G, H, cur, next) -> int:
         if n == cur:  # edgeが双方向のため
             continue
         height = dfs(G, H, next, n) + 1
-        # 一番の深さを更新
+        # 一番の高さを更新
         H[next] = max(H[next], height)
     return H[next]  #呼びもとに高さを返す
 
